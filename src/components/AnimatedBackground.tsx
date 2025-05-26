@@ -39,8 +39,9 @@ const AnimatedBackground = ({ scene }: AnimatedBackgroundProps) => {
       color: string;
       
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        // Ensure canvas dimensions are used safely with non-null assertion
+        this.x = Math.random() * (canvas?.width || window.innerWidth);
+        this.y = Math.random() * (canvas?.height || window.innerHeight);
         this.size = Math.random() * 3 + 1;
         this.speedX = (Math.random() - 0.5) * 2;
         this.speedY = (Math.random() - 0.5) * 2;
@@ -61,12 +62,12 @@ const AnimatedBackground = ({ scene }: AnimatedBackgroundProps) => {
         this.x += this.speedX;
         this.y += this.speedY;
         
-        // Bounce off edges
-        if (this.x > canvas.width || this.x < 0) {
+        // Bounce off edges with null check for canvas
+        if (canvas && (this.x > canvas.width || this.x < 0)) {
           this.speedX = -this.speedX;
         }
         
-        if (this.y > canvas.height || this.y < 0) {
+        if (canvas && (this.y > canvas.height || this.y < 0)) {
           this.speedY = -this.speedY;
         }
       }
@@ -112,6 +113,7 @@ const AnimatedBackground = ({ scene }: AnimatedBackgroundProps) => {
     let animationFrameId: number;
     
     const animate = () => {
+      if (!ctx || !canvas) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Update and draw particles
@@ -135,6 +137,7 @@ const AnimatedBackground = ({ scene }: AnimatedBackgroundProps) => {
       case 1: // Scene 2
         // Swirl effect
         for (const particle of particles) {
+          if (!canvas) return;
           const centerX = canvas.width / 2;
           const centerY = canvas.height / 2;
           const dx = particle.x - centerX;
@@ -150,6 +153,7 @@ const AnimatedBackground = ({ scene }: AnimatedBackgroundProps) => {
       case 2: // Scene 3
         // Grid alignment
         for (const particle of particles) {
+          if (!canvas) return;
           const gridSize = 50;
           const targetX = Math.round(particle.x / gridSize) * gridSize;
           const targetY = Math.round(particle.y / gridSize) * gridSize;
@@ -161,6 +165,7 @@ const AnimatedBackground = ({ scene }: AnimatedBackgroundProps) => {
       case 3: // Scene 4
         // Explosion effect
         for (const particle of particles) {
+          if (!canvas) return;
           const centerX = canvas.width / 2;
           const centerY = canvas.height / 2;
           const dx = particle.x - centerX;
