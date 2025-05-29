@@ -84,9 +84,8 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           }}
         >
           <motion.div
-            className="text-8xl font-bold font-playfair text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-4 tracking-tight"
             animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              filter: ["brightness(1)", "brightness(1.2)", "brightness(1)"],
             }}
             transition={{ 
               duration: 8, 
@@ -94,18 +93,12 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
               repeatType: "mirror",
               type: "tween" 
             }}
+            className="flex justify-center"
           >
-            CHECK
+            <img src="/logo-check-white.png" alt="Check Logo" className="h-36" />
           </motion.div>
         </motion.div>
-        
-        {/* Animated underline */}
-        <motion.div
-          className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"
-          initial={{ width: 0, opacity: 0 }}
-          animate={{ width: "80%", opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-        />
+
         
         {/* Tagline with character-by-character animation */}
         <motion.div
@@ -333,7 +326,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           animate={{ filter: "blur(0px)" }}
           transition={{ duration: 1, type: "tween" }}
         >
-          CHECK
+          <img src="/logo-check-white.png" alt="Check Logo" className="h-36" />
         </motion.div>
       </motion.div>
       
