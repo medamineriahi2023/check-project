@@ -249,7 +249,7 @@ export default function Home() {
             </section>
 
             {/* Features Section */}
-            <section id="features" className="py-20 bg-gray-50 dark:bg-gray-800/50">
+            <section id="features" className="relative py-20 bg-gray-50 dark:bg-gray-800/50">
               <div className="container mx-auto px-4">
                 <motion.div
                   className="text-center mb-16"
@@ -348,7 +348,7 @@ export default function Home() {
             </section>
 
             {/* Benefits Section */}
-            <section id="benefits" className="py-20">
+            <section id="benefits" className="relative py-20">
               <div className="container mx-auto px-4">
                 <motion.div
                   className="text-center mb-16"
@@ -455,7 +455,7 @@ export default function Home() {
             </section>
 
             {/* Testimonials Section */}
-            <section id="testimonials" className="py-20 bg-gray-50 dark:bg-gray-800/50">
+            <section id="testimonials" className="relative py-20 bg-gray-50 dark:bg-gray-800/50">
               <div className="container mx-auto px-4">
                 <motion.div
                   className="text-center mb-16"
@@ -515,7 +515,7 @@ export default function Home() {
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="py-20">
+            <section id="contact" className=" relative py-20">
               <div className="container mx-auto px-4">
                 <div className="max-w-5xl mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden">
                   <div className="grid md:grid-cols-2">
@@ -654,7 +654,7 @@ export default function Home() {
             </section>
 
             {/* Call Sales Section */}
-            <section className="py-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+            <section className="relative py-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
               <div className="container mx-auto px-4 text-center">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -667,16 +667,14 @@ export default function Home() {
                     Our sales team is ready to help you implement the perfect solution for your business needs.
                   </p>
                   <motion.div
-                    className="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-full font-bold shadow-lg"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <a href="tel:+21656801710" className="flex items-center space-x-2">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                      <span>Call Sales: +216 56 801 710</span>
-                    </a>
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <a href="tel:+21656801710">Call Sales: +216 56 801 710</a>
                   </motion.div>
                 </motion.div>
               </div>
