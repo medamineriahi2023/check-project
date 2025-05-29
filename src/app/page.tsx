@@ -11,20 +11,42 @@ export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
-  // Effect to check system theme preference
+  // Effect to check system theme preference and set up theme
   useEffect(() => {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(isDarkMode ? 'dark' : 'light');
-
+    // Check if there's a saved theme preference in localStorage
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Use saved preference or system preference
+    const initialTheme = savedTheme === 'light' ? 'light' : 
+                         savedTheme === 'dark' ? 'dark' : 
+                         prefersDark ? 'dark' : 'light';
+    
+    setTheme(initialTheme);
+    
     // Apply theme class to document
-    document.documentElement.classList.toggle('dark', isDarkMode);
+    if (initialTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, []);
 
   // Handle theme toggle
   const handleThemeToggle = () => {
     setTheme(prevTheme => {
       const newTheme = prevTheme === 'light' ? 'dark' : 'light';
-      document.documentElement.classList.toggle('dark', newTheme === 'dark');
+      
+      // Save preference to localStorage
+      localStorage.setItem('theme', newTheme);
+      
+      // Update document class
+      if (newTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      
       return newTheme;
     });
   };

@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={`${inter.variable} ${montserrat.variable} ${poppins.variable} ${playfair.variable} font-sans`}>{children}</body>
     </html>
   )
