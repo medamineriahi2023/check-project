@@ -91,7 +91,7 @@ export default function Home() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <img src="/logo-check.png" alt="Check Logo" className="h-16" />
+                  <img src="/pi-logo-v14.png" alt="Check Logo" className="h-16" />
                 </motion.div>
 
                 <motion.div

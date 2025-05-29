@@ -95,7 +95,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
             }}
             className="flex justify-center"
           >
-            <img src="/logo-check-white.png" alt="Check Logo" className="h-24 md:h-36" />
+            <img src="/pi-logo-v15.png" alt="Check Logo" className="h-24 md:h-36" />
           </motion.div>
         </motion.div>
 
@@ -364,7 +364,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           animate={{ filter: "blur(0px)" }}
           transition={{ duration: 1, type: "tween" }}
         >
-          <img src="/logo-check-white.png" alt="Check Logo" className="h-24 md:h-36" />
+          <img src="/pi-logo-v15.png" alt="Check Logo" className="h-24 md:h-36" />
         </motion.div>
       </motion.div>
       
