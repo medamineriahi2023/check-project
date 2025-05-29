@@ -41,7 +41,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
   // Progress indicator
   const ProgressIndicator = () => (
     <motion.div 
-      className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2"
+      className="absolute bottom-8 md:bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5 }}
@@ -49,7 +49,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       {Array.from({ length: totalScenes }).map((_, i) => (
         <motion.div
           key={i}
-          className={`w-3 h-3 rounded-full ${i === currentScene ? 'bg-blue-500' : 'bg-gray-600'}`}
+          className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full ${i === currentScene ? 'bg-blue-500' : 'bg-gray-600'}`}
           initial={{ scale: i === currentScene ? 0 : 1 }}
           animate={{ 
             scale: i === currentScene ? [0, 1.2, 1] : 1,
@@ -64,7 +64,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
   // Scene 1: Initial logo reveal
   const Scene1 = () => (
     <motion.div 
-      className="flex flex-col items-center justify-center text-center z-10 relative"
+      className="flex flex-col items-center justify-center text-center z-10 relative px-4"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -95,7 +95,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
             }}
             className="flex justify-center"
           >
-            <img src="/logo-check-white.png" alt="Check Logo" className="h-36" />
+            <img src="/logo-check-white.png" alt="Check Logo" className="h-24 md:h-36" />
           </motion.div>
         </motion.div>
 
@@ -105,9 +105,9 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="mt-6 mb-12"
+          className="mt-4 md:mt-6 mb-8 md:mb-12"
         >
-          <div className="font-montserrat text-xl text-blue-200 tracking-wide overflow-hidden">
+          <div className="font-montserrat text-lg md:text-xl text-blue-200 tracking-wide overflow-hidden">
             {Array.from("Transforming check processing").map((char, index) => (
               <motion.span
                 key={index}
@@ -140,7 +140,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
     >
       {/* Main heading */}
       <motion.h2 
-        className="text-5xl font-poppins font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-400"
+        className="text-3xl md:text-5xl font-poppins font-bold mb-6 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-400 px-4"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -150,7 +150,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       
       {/* Features list with staggered animation */}
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto"
+        className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
@@ -158,7 +158,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         {[
           {
             icon: (
-              <svg className="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-10 h-10 md:w-12 md:h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
               </svg>
             ),
@@ -167,7 +167,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           },
           {
             icon: (
-              <svg className="w-12 h-12 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-10 h-10 md:w-12 md:h-12 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0112.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z"></path>
               </svg>
             ),
@@ -176,7 +176,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           },
           {
             icon: (
-              <svg className="w-12 h-12 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-10 h-10 md:w-12 md:h-12 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
               </svg>
             ),
@@ -186,7 +186,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         ].map((feature, index) => (
           <motion.div
             key={index}
-            className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/20 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 transition-all relative overflow-hidden"
+            className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 backdrop-blur-sm p-4 md:p-8 rounded-2xl border border-blue-500/20 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 transition-all relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
@@ -200,7 +200,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl opacity-20"></div>
             
             <motion.div 
-              className="mb-6 flex justify-center"
+              className="mb-4 md:mb-6 flex justify-center"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ 
@@ -212,7 +212,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
             >
               {feature.icon}
             </motion.div>
-            <h3 className="text-xl font-montserrat font-semibold text-blue-200 mb-3">{feature.title}</h3>
+            <h3 className="text-lg md:text-xl font-montserrat font-semibold text-blue-200 mb-2 md:mb-3">{feature.title}</h3>
             <p className="text-blue-300/80 font-poppins text-sm">{feature.description}</p>
           </motion.div>
         ))}
@@ -231,7 +231,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
     >
       {/* Main heading */}
       <motion.h2 
-        className="text-5xl font-poppins font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-blue-400"
+        className="text-3xl md:text-5xl font-poppins font-bold mb-6 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-blue-400 px-4"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -241,7 +241,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       
       {/* Process steps with flowing animation */}
       <motion.div 
-        className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 max-w-5xl mx-auto"
+        className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 max-w-5xl mx-auto px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
@@ -249,7 +249,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         {[
           {
             icon: (
-              <svg className="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-10 h-10 md:w-12 md:h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
               </svg>
             ),
@@ -258,7 +258,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           },
           {
             icon: (
-              <svg className="w-12 h-12 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-10 h-10 md:w-12 md:h-12 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
             ),
@@ -267,7 +267,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           },
           {
             icon: (
-              <svg className="w-12 h-12 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-10 h-10 md:w-12 md:h-12 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             ),
@@ -276,7 +276,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           },
           {
             icon: (
-              <svg className="w-12 h-12 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-10 h-10 md:w-12 md:h-12 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 7h12m0 0l-4 4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
               </svg>
             ),
@@ -297,7 +297,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
             
             {/* Step card */}
             <motion.div
-              className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 backdrop-blur-sm p-6 rounded-2xl border border-blue-500/20 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 transition-all relative overflow-visible"
+              className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-blue-500/20 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 transition-all relative overflow-visible w-64 md:w-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ 
@@ -311,7 +311,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl opacity-20"></div>
               
               <motion.div 
-                className="mb-4 flex justify-center relative z-10"
+                className="mb-4 md:mb-6 flex justify-center relative z-10"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ 
@@ -323,7 +323,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
               >
                 {step.icon}
               </motion.div>
-              <h3 className="text-xl font-montserrat font-semibold text-blue-200 mb-2 relative z-10">{step.title}</h3>
+              <h3 className="text-lg md:text-xl font-montserrat font-semibold text-blue-200 mb-1 md:mb-2 relative z-10">{step.title}</h3>
               <p className="text-blue-300/80 font-poppins text-sm relative z-10">{step.description}</p>
               
               {/* Step number - positioned outside the parent div's flow */}
@@ -364,7 +364,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           animate={{ filter: "blur(0px)" }}
           transition={{ duration: 1, type: "tween" }}
         >
-          <img src="/logo-check-white.png" alt="Check Logo" className="h-36" />
+          <img src="/logo-check-white.png" alt="Check Logo" className="h-24 md:h-36" />
         </motion.div>
       </motion.div>
       
@@ -375,7 +375,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
-        <div className="font-poppins text-2xl text-blue-100 tracking-wide">
+        <div className="font-poppins text-xl md:text-2xl text-blue-100 tracking-wide">
           {["Intelligent", "•", "Efficient", "•", "Secure"].map((word, index) => (
             <motion.span
               key={index}
@@ -386,7 +386,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
                 duration: 0.6,
                 ease: "easeOut"
               }}
-              className="inline-block mx-2"
+              className="inline-block mx-1 md:mx-2"
             >
               {word}
             </motion.span>
@@ -478,7 +478,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
 
   return (
     <motion.div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black overflow-hidden"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -549,16 +549,13 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       
       {/* Skip button */}
       <motion.button
-        className="absolute bottom-8 right-8 text-gray-400 text-sm flex items-center space-x-2 opacity-70 hover:opacity-100 transition-opacity"
+        className="absolute bottom-4 md:bottom-8 right-4 md:right-8 text-sm md:text-base text-blue-300 hover:text-white transition-colors"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.7 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
         onClick={onComplete}
       >
-        <span>Skip Intro</span>
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-        </svg>
+        Skip Intro
       </motion.button>
     </motion.div>
   );
