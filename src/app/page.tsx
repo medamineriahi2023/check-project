@@ -474,19 +474,19 @@ export default function Home() {
                   {[
                     {
                       quote: "CHECK has transformed our accounts payable process. We've reduced processing time by 80% and virtually eliminated manual errors.",
-                      author: "Sarah Johnson",
+                      author: "Salma Ben Ali",
                       position: "CFO, Global Financial Services",
                       avatar: "👩‍💼"
                     },
                     {
                       quote: "The SAP integration is seamless. Our financial data flows automatically into our ERP system, saving us countless hours of work.",
-                      author: "Michael Chen",
+                      author: "Ahmed ben ahmed",
                       position: "IT Director, Retail Chain",
                       avatar: "👨‍💼"
                     },
                     {
                       quote: "Customer support is exceptional. The team helped us customize the solution to our specific needs and was always available when we needed them.",
-                      author: "Emma Rodriguez",
+                      author: "Ahlem Riahi",
                       position: "Operations Manager, Healthcare Provider",
                       avatar: "👩‍⚕️"
                     }
@@ -536,7 +536,7 @@ export default function Home() {
                           <svg className="w-6 h-6 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                           </svg>
-                          <span>+1 (555) 123-4567</span>
+                          <span>+216 56 801 710</span>
                         </div>
 
                         <div className="flex items-center">
@@ -551,7 +551,7 @@ export default function Home() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                           </svg>
-                          <span>123 Business Avenue, Suite 500<br />San Francisco, CA 94107</span>
+                          <span>Esprit Charguia 2, Tunis 1120</span>
                         </div>
                       </div>
 
@@ -598,7 +598,7 @@ export default function Home() {
                             type="text"
                             id="name"
                             className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="John Doe"
+                            placeholder="Foulen ben foulen"
                           />
                         </div>
                         
@@ -610,7 +610,7 @@ export default function Home() {
                             type="email"
                             id="email"
                             className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="john@example.com"
+                            placeholder="foulen@example.com"
                           />
                         </div>
                         
