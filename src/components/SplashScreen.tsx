@@ -157,24 +157,36 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       >
         {[
           {
-            icon: "📄",
+            icon: (
+              <svg className="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            ),
             title: "Multiple File Formats",
             description: "Process PNG, JPG, and PDF check images with ease"
           },
           {
-            icon: "🔍",
+            icon: (
+              <svg className="w-12 h-12 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0112.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z"></path>
+              </svg>
+            ),
             title: "Intelligent Analysis",
             description: "Advanced algorithms extract check data accurately"
           },
           {
-            icon: "🔄",
+            icon: (
+              <svg className="w-12 h-12 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+            ),
             title: "SAP Integration",
             description: "Seamlessly export processed data to SAP systems"
           }
         ].map((feature, index) => (
           <motion.div
             key={index}
-            className="bg-gradient-to-br from-blue-900/30 to-indigo-900/30 backdrop-blur-sm p-6 rounded-xl border border-blue-800/30"
+            className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/20 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 transition-all relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
@@ -182,9 +194,13 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
               duration: 0.6,
               ease: [0.22, 1, 0.36, 1]
             }}
+            whileHover={{ y: -5, transition: { duration: 0.2 } }}
           >
+            {/* Background glow effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl opacity-20"></div>
+            
             <motion.div 
-              className="text-4xl mb-4"
+              className="mb-6 flex justify-center"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ 
@@ -196,7 +212,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
             >
               {feature.icon}
             </motion.div>
-            <h3 className="text-xl font-montserrat font-semibold text-blue-200 mb-2">{feature.title}</h3>
+            <h3 className="text-xl font-montserrat font-semibold text-blue-200 mb-3">{feature.title}</h3>
             <p className="text-blue-300/80 font-poppins text-sm">{feature.description}</p>
           </motion.div>
         ))}
@@ -232,22 +248,38 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       >
         {[
           {
-            icon: "📁",
+            icon: (
+              <svg className="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+              </svg>
+            ),
             title: "Upload",
             description: "Select multiple check images or PDFs"
           },
           {
-            icon: "⚡",
+            icon: (
+              <svg className="w-12 h-12 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            ),
             title: "Analyze",
             description: "AI-powered data extraction"
           },
           {
-            icon: "✅",
+            icon: (
+              <svg className="w-12 h-12 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            ),
             title: "Verify",
             description: "Review and confirm results"
           },
           {
-            icon: "🔄",
+            icon: (
+              <svg className="w-12 h-12 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 7h12m0 0l-4 4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+              </svg>
+            ),
             title: "Export",
             description: "Send to SAP with one click"
           }
@@ -265,7 +297,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
             
             {/* Step card */}
             <motion.div
-              className="bg-gradient-to-br from-blue-900/30 to-indigo-900/30 backdrop-blur-sm p-6 rounded-xl border border-blue-800/30 w-64"
+              className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 backdrop-blur-sm p-6 rounded-2xl border border-blue-500/20 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 transition-all relative overflow-visible"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ 
@@ -273,9 +305,13 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
                 duration: 0.6,
                 ease: [0.22, 1, 0.36, 1]
               }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
+              {/* Background glow effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl opacity-20"></div>
+              
               <motion.div 
-                className="text-4xl mb-4"
+                className="mb-4 flex justify-center relative z-10"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ 
@@ -287,18 +323,20 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
               >
                 {step.icon}
               </motion.div>
-              <h3 className="text-xl font-montserrat font-semibold text-blue-200 mb-2">{step.title}</h3>
-              <p className="text-blue-300/80 font-poppins text-sm">{step.description}</p>
+              <h3 className="text-xl font-montserrat font-semibold text-blue-200 mb-2 relative z-10">{step.title}</h3>
+              <p className="text-blue-300/80 font-poppins text-sm relative z-10">{step.description}</p>
               
-              {/* Step number */}
-              <motion.div 
-                className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm"
-                initial={{ scale: 0, rotate: -45 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ delay: 0.9 + index * 0.2, type: "spring" }}
-              >
-                {index + 1}
-              </motion.div>
+              {/* Step number - positioned outside the parent div's flow */}
+              <div className="absolute -top-3 -right-3" style={{ zIndex: 9999 }}>
+                <motion.div 
+                  className="w-9 h-9 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-blue-500/30"
+                  initial={{ scale: 0, rotate: -45 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ delay: 0.9 + index * 0.2, type: "spring" }}
+                >
+                  {index + 1}
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         ))}
